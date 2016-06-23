@@ -274,7 +274,7 @@ let l = foo::<_, [1, 2, 3, 4, 5, 6]>();
 
 Often, it is wanted to have some statically checked clause satisfied by the
 constant parameters (e.g., for the sake of compile-time bound checking). To
-archive this, in a reasonable manner, we use const exprs, returning a boolean.
+achieve this, in a reasonable manner, we use constexprs, returning a boolean.
 
 We allow such constexprs in `where` clauses of functions. Whenever the
 function is invoked given constant parameters `<a, b...>`, the compiler
@@ -323,7 +323,7 @@ means that `a` is true.
 
 These rules are "eliminatory" (recursing downwards the tree and decreasing the
 structure), and thus it is possible to check, in this language, that `a ⇒ b`
-relatively quickly (`O(n)`). For a proof of see the section below.
+relatively quickly (`O(n)`). For a proof of this claim see the section below.
 
 More rules can be added in the future. It is however important to preserve the
 "sequential property" (that is, each step is a reduction, not an expansion),
@@ -606,7 +606,7 @@ These are all reductive.
 ## Expression reduction rules
 
 We might want to have expression reduction rules beyond the basic const
-folding. This would allow certain symbolic comparation to improve.
+folding. This would allow certain symbolic comparison to improve.
 
     DistributiveMultiplicationLhs:
       c(a + b) ↦ ca + cb
@@ -717,7 +717,7 @@ If we want to have type-level Turing completeness, the halting problem is
 inevitable. One could "fix" this by adding timeouts, like the current recursion
 bounds.
 
-Another drawback is the lack of implication proves.
+Another drawback is the lack of implication proofs.
 
 # Alternatives
 [alternatives]: #alternatives
